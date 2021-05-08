@@ -18,3 +18,20 @@
     Migrations são onde ficam os dados da tabela, como nome da coluna, tipo e relacionamentos.
     Após criar as models e migrations, no código, para criá-las no banco, rodar o comando:
     php artisan migrate
+
+5 - Criar Controllers
+    Controllers é onde fica a regra de negócio. Onde faço todas as tratativas de regras do sistema.
+    Para criar uma controller sem nenhum método padrão, rodar o comando:
+    php artisan make:controller
+
+6 - Rotas
+    Após criar a controller e um método nela, para acessar esse método, é necessário uma rota.
+    O arquivo de rotas se encontra em: Routes\web.php
+
+    As rotas tem essa estrutura:
+    Route::get('one-to-one','OneToOneController@oneToOne');
+
+    Onde:   get             ->      tipo de requisição HTTP
+            one-to-one      ->      rota acessada pela URL
+            ...Controller   ->      Controller que responderá pela requisição solicitada
+            @oneToOne       ->      Método acessado pela rota/controller 
