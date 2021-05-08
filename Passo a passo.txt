@@ -1,0 +1,20 @@
+
+1 - Criar o projeto
+    A versão não é obrigatório informar. Caso não informe, será baixado a última versão.
+    composer create-project --prefer-dist laravel/laravel nomeDoProjeto "6.*"
+
+2 - Alterar timezone
+    Acessar o arquivo app.php, que está na pasta config, e alterar o timezone para:
+    America/Sao_Paulo
+
+3 - Criar uma Model
+    A condição '-m' indica que também deverá criar a migration. As migrations ficam em:
+    database\migrations
+    php artisan make:model Models\Country -m
+
+    As models criadas ficam em: app\Models\
+
+4 - Modificar as migrations
+    Migrations são onde ficam os dados da tabela, como nome da coluna, tipo e relacionamentos.
+    Após criar as models e migrations, no código, para criá-las no banco, rodar o comando:
+    php artisan migrate
