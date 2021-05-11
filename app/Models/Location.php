@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
+    // Campos que serão preenchidos pelo usuário
+    protected $fillable = ['latitude', 'longitude'];
+
     //retornar apenas um registro
     public function country()
     {
