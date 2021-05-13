@@ -14,4 +14,9 @@ class Country extends Model
         return $this->hasOne(Location::class);
     }
 
+    // pegar estados de um país
+    public function states(){
+        return $this->hasMany(State::class);
+    }
+
 }
