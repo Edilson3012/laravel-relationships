@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\State;
 use Illuminate\Http\Request;
 
 class OneToManyController extends Controller
@@ -31,5 +32,15 @@ class OneToManyController extends Controller
             echo "<hr>";
         }
 
+    }
+
+    public function manyToOne(){
+
+        $stateName = 'São Paulo';
+        $state = State::where('name', $stateName)->get()->first();
+        echo "<b>{$state->name}</b>";
+
+        $country = $state->country;
+        echo "<br>País: {$country->name}";
     }
 }
