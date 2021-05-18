@@ -89,4 +89,19 @@ class OneToManyController extends Controller
         State::create($dataForm);
     }
 
+    public function oneToManyThrough(){
+
+        $country = Country::find(1);
+        echo "<b>$country->name</b><br>";
+
+        $cities = $country->cities;
+
+        foreach($cities as $city){
+            echo "{$city->name}, ";
+        }
+
+        echo "<br>Total Cidades: {$city->count()}";
+
+    }
+
 }
